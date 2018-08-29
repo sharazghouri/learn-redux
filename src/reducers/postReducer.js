@@ -1,12 +1,22 @@
-import {FETCH_POSTS, NEW_POST} from "../actoins/type";
+import {FETCH_POSTS} from "../actoins/type";
 
-const initialState ={
-    items:[],
-    item:{}
+
+const initialState = {
+    items: [],
+    item: {}
 };
 
-export default function (state = initalState ,action) {
-    switch ( action.type ){
+export default function (state = initialState, action) {
 
+    switch (action.type) {
+        case FETCH_POSTS:
+
+            return {
+                ...state,
+                items: action.payload
+            }
+        default:
+            return state;
     }
+
 }
